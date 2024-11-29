@@ -2,3 +2,4 @@ __pycache__
 github_commits/
 *.ipynb
 config.py
+.DS_Store
