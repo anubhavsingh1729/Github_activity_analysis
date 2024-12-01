@@ -3,3 +3,5 @@ github_commits/
 *.ipynb
 config.py
 .DS_Store
+commit_data/
+.ipynb_checkpoints/

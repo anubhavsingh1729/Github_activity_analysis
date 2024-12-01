@@ -16,5 +16,15 @@ def process_commits(spark,raw_data):
 
     commit_df = spark.createDataFrame(raw_data,schema)
 
-    return commit_df
+    from pyspark.sql.functions import col, explode
 
+    commit_df = commit_df.withColumn("file", explode(col("files"))) \
+                         .select(
+                             "sha", "author", "date", "message",
+                             col("file.filename").alias("filename"),
+                             col("file.additions").cast("int").alias("additions"),
+                             col("file.deletions").cast("int").alias("deletions"),
+                             col("file.changes").cast("int").alias("changes"),
+                             col("file.patch").alias("patch")
+                         )
+    return commit_df
