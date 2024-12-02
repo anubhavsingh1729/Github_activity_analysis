@@ -3,6 +3,7 @@ from process_commits import process_commits,init_spark
 from save import save_to_parquet
 from perceval import get_perceval
 from config import REPOSITORIES,OUTPUT_PATH
+from unified_commit_data import unify_commit_data
 
 
 def git_api():
@@ -31,6 +32,7 @@ def perceval_api():
 def main():
     #git_api()
     perceval_api()
+    unify_commit_data()
 
 if __name__=="__main__":
     main()

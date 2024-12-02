@@ -2,6 +2,7 @@ import perceval
 
 import os
 import subprocess
+from config import PERCEVAL_OUTPUT
 
 def fetch_commits(repo_url, output_file, token=None):
     """
@@ -25,7 +26,7 @@ def fetch_commits(repo_url, output_file, token=None):
         subprocess.run(cmd, stdout=out, check=True)
     print(f"Commits fetched and saved to {output_file}")
 
-def get_perceval(repo_name,output_dir = "commit_data"):
+def get_perceval(repo_name,output_dir = PERCEVAL_OUTPUT):
     REPO_URL = f"https://github.com/{repo_name}.git"
 
     os.makedirs(output_dir, exist_ok=True)
