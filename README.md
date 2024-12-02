@@ -25,3 +25,7 @@ REPOSITORIES = [
 ]
 
 OUTPUT_PATH = "./path_to_output/"
+
+UNIFIED_OUTPUT = "./path_to_unified_output/"
+
+PERCEVAL_OUTPUT = "./path_to_perceval_commit_data/"
