@@ -22,7 +22,6 @@ def unify_commit_data(output_dir=UNIFIED_OUTPUT):
         # Process only JSON files
         if f.endswith('.json'): 
             file = os.path.join('commit_data', f)  # Construct the full path of the JSON file
-            
             # Read and load JSON file line by line into a list of dictionaries
             with open(file, 'r') as f:
                 data = [json.loads(line) for line in f]

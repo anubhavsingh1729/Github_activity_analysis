@@ -1,6 +1,6 @@
 __pycache__
 github_commits/
-*.ipynb
+Untitled.ipynb
 config.py
 .DS_Store
 commit_data/
